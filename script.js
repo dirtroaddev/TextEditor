@@ -12,6 +12,11 @@
  */
 function updateText(){
   // CODE GOES HERE
+  const textInput = document.querySelector("#text-input").value;
+  const output = document.querySelector("#text-output").innerText = textInput;;
+  
+    
+  
 }
 
 /**
