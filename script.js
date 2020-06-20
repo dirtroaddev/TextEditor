@@ -28,12 +28,16 @@ function updateText(){
  */
 function makeBold(elem){
   //CODE GOES HERE
+  document.getElementById("text-output").classList.toggle('bold');
+  elem.classList.toggle('active');
 }
 
 /**
  * Toggle the italic class for the output text
  */
 function makeItalic(elem){
+  document.getElementById("text-output").classList.toggle('italic');
+  elem.classList.toggle('active');
 }
 
 /**
@@ -44,6 +48,14 @@ function makeItalic(elem){
  */
 function makeUnderline(elem){
     //CODE GOES HERE
+    elem.classList.toggle('active');
+    let formattedText = document.getElementById("text-output");
+    if(formattedText.classList.contains('underline')) {
+      formattedText.classList.remove('underline');
+    }else {
+      formattedText.classList.add('underline');
+    }
+    console.log("clicked");
 }
 
 /**
@@ -54,4 +66,11 @@ function makeUnderline(elem){
  */
 function alignText(elem, alignType){
   // CODE GOES HERE
+    elem.classList.toggle("active");
+    document.getElementById("text-output").style.textAlign= alignType;
+    let buttonsList = document.getElementsByClassName('align');
+    for(let i = 0; i < buttonsList.length; i++) {
+      buttonsList[i].classList.remove('active');
+    }
+    elem.classList.add('active');
 }
